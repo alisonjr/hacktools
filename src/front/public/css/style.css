@@ -1,0 +1,70 @@
+
+body {
+	margin: 0;
+	font-family: raleway, sans-serif -apple-system;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: left;
+	background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, p, span, li, a, .h1, .h2, .h3, .h4, .h5, .p, .span, .li, .a, .titlebar, .nav-link{
+	font-family: raleway, sans-serif;
+	color: #54595f;
+}
+.nav-link{
+	font-size: 12px;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: 400;
+}
+
+h1, h2, h4, h5, .h1, .h2, .h4, .h5{
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 36px;
+	text-align: left;
+	padding: 0;
+}
+
+h3, .h3 {
+	font-size: 1.75rem;
+}
+
+.form-control {
+	font-size: 16px;
+	font-family: raleway, sans-serif;
+	border: none;
+	height: 44px;
+	background: #fff;
+	color: rgba(0, 0, 0, 0.8);
+	border-radius: 2px;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.contact-wrap {
+	background: #e8edf0;
+}
+
+.contactForm .label {
+	color: #000;
+	text-transform: uppercase;
+	font-family: raleway, sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.contactForm .form-control {
+	font-size: 16px;
+}
+
+.contactForm .form-control {
+	border: none;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
