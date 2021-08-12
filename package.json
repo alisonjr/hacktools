@@ -1,0 +1,14 @@
+{
+  "name": "hacktools",
+  "version": "1.0.0",
+  "description": "App para o teste da AgroTools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alison Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
