@@ -9,8 +9,7 @@ body {
 	text-align: left;
 	background-color: #fff;
 }
-
-h1, h2, h3, h4, h5, p, span, li, a, .h1, .h2, .h3, .h4, .h5, .p, .span, .li, .a, .titlebar, .nav-link{
+h1, h2, h3, h4, h5, p, span, li, a, small, .h1, .h2, .h3, .h4, .h5, .p, .span, .li, .a, .titlebar, .nav-link{
 	font-family: raleway, sans-serif;
 	color: #54595f;
 }
@@ -32,6 +31,9 @@ h1, h2, h4, h5, .h1, .h2, .h4, .h5{
 h3, .h3 {
 	font-size: 1.75rem;
 }
+textarea {
+	min-height: 100px !important;
+}
 
 .form-control {
 	font-size: 16px;
@@ -45,11 +47,11 @@ h3, .h3 {
 	box-shadow: none !important;
 }
 
-.contact-wrap {
+.container-wrap {
 	background: #e8edf0;
 }
 
-.contactForm .label {
+form > .label {
 	color: #000;
 	text-transform: uppercase;
 	font-family: raleway, sans-serif;
@@ -57,11 +59,8 @@ h3, .h3 {
 	font-weight: 600;
 }
 
-.contactForm .form-control {
+form > .form-control {
 	font-size: 16px;
-}
-
-.contactForm .form-control {
 	border: none;
 }
 
