@@ -1,10 +1,21 @@
 import express from 'express'
+import routeManager from './api/router'
+
+
+
+
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const apiServer = {
+  listen(port, uriPath, callback) {
 
-export default app;
+    routeManager(app, uriPath)
+
+
+    // console.log(app._router.stack)
+    return app.listen(port, callback)
+  }
+}
+export default apiServer
 
 
