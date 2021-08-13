@@ -73,10 +73,13 @@ const staticServer = createServer(function (request, response) {
 
 
     try {
-        const pageContent = readFileSync(filePath, 'utf8')
-        const pageComplete = makePage(pageContent)
+        const fileContent = readFileSync(filePath, 'utf8')
 
-        render(response, contentType, pageComplete)
+        if(contentType === 'text/html')
+            render(response, contentType, makePage(fileContent))
+        else
+            render(response, contentType, fileContent)
+
     } catch (error) {
         if (error.code === 'ENOENT') {
             try {
