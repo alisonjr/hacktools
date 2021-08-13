@@ -1,3 +1,79 @@
-<div>
-	<h2> Teste de template</h2>
+<div class="row">
+	<div class="col-md-12">
+		<div class="container-wrap w-100 p-md-5 p-4">
+			<h3 class="mb-4">Cadastro de questionário</h3>
+			<form method="POST" id="questionForm" name="questionForm" class="questionForm" novalidate="novalidate">
+				<div class="row ">
+					<div class="col-md-12 mb-3">
+						<div class="form-group">
+							<label class="label" for="title">Título</label>
+							<input type="text" name="title" class="form-control" id="title"
+								placeholder="Digite o título do questionário"></input>
+						</div>
+					</div>
+					<div class="col-md-12 mb-5">
+						<label class="label">Selecione as perguntas</label>
+						<div class="bg-light px-3 py-1">
+							<div class="form-check form-switch py-2">
+								<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+								<p class="m-0">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+									industry's standard
+									dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+									make
+									a type specimen
+									book. It has survived not only five centuries, but also the leap into electronic typesetting,
+									remaining
+									essentially
+									unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+									passages, and more
+									recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+								</p>
+							</div>
+							<hr class="m-0" />
+							<div class="form-check form-switch py-2">
+								<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+								<p class="m-0">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+									industry's standard
+									dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+									make
+									a type specimen
+									book. It has survived not only five centuries, but also the leap into electronic typesetting,
+									remaining
+									essentially
+									unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+									passages, and more
+									recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+								</p>
+							</div>
+							<hr class="m-0" />
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group float-end">
+							<button type="submit" class="btn btn-primary">
+								<i class="fa fa-save me-1"></i> Salvar
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
+<p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
+<button onclick="getLocation()">Clique Aqui</button>
+<script>
+	var x = document.getElementById("demo");
+	function getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		}
+		else { x.innerHTML = "O seu navegador não suporta Geolocalização."; }
+	}
+	function showPosition(position) {
+		x.innerHTML = "Latitude: " + position.coords.latitude +
+			"<br>Longitude: " + position.coords.longitude;
+	}
+</script>

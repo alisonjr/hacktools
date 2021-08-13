@@ -1,58 +1,49 @@
-
-<div class="row justify-content-center">
-	<div class="col-md-6 text-center mb-5">
-		<h2 class="heading-section">Questionario #1</h2>
-	</div>
-</div>
-<div class="row justify-content-center">
-	<div class="col-md-12">
-		<div class="wrapper">
-			<div class="row no-gutters mb-5">
-				<div class="col-md-12">
-					<div class="contact-wrap w-100 p-md-5 p-4">
-						<h3 class="mb-4">Contact Us</h3>
-						<form method="POST" id="contactForm" name="contactForm" class="contactForm"
-						      novalidate="novalidate">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label class="label" for="name">Full Name</label>
-										<input type="text" class="form-control" name="name" id="name"
-										       placeholder="Name">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label class="label" for="email">Email Address</label>
-										<input type="email" class="form-control" name="email" id="email"
-										       placeholder="Email">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<label class="label" for="subject">Subject</label>
-										<input type="text" class="form-control" name="subject" id="subject"
-										       placeholder="Subject">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<label class="label" for="#">Message</label>
-										<textarea name="message" class="form-control" id="message" cols="30"
-										          rows="4"
-										          placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<input type="submit" value="Send Message" class="btn btn-primary">
-										<div class="submitting"></div>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
+<div class="col-md-12">
+	<div class="container-wrap w-100 p-md-5 p-4">
+		<div class="row">
+			<div class="d-flex justify-content-between">
+				<div>
+					<h3 class="mb-4">Questionários cadastrados </h3>
 				</div>
+				<div>
+					<a href="questionarios/novo" role="button" class="btn btn-success">
+						<i class="fa fa-plus me-1"></i>Adicionar
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-white">
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col" style="min-width: 200px;">Título</th>
+							<th scope="col">Usuário</th>
+							<th scope="col">Data</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>@mdo</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>@fat</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>Larry the Bird Larry the Bird</td>
+							<td>Thornton</td>
+							<td>@twitter</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
