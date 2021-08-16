@@ -1,9 +1,15 @@
 <div class="row">
   <div class="col-md-12">
     <div class="container-wrap w-100 p-md-5 p-4">
-      <h3 class="mb-4">Cadastro de perguntas</h3>
-      <form method="POST" id="questionForm" name="questionForm" class="questionForm" novalidate="novalidate">
+      <h3 class="mb-4">Cadastro de pergunta</h3>
+      <form id="form" name="form"  onsubmit="event.preventDefault(); enviar();">
         <div class="row mb-3">
+          <div class="col-md-5">
+            <div class="form-group">
+              <label class="label" for="usuario">Usuário</label>
+	            <input name="usuario" class="form-control" id="usuario" placeholder="Digite o seu nome"/>
+            </div>
+          </div>
           <div class="col-md-12">
             <div class="form-group">
               <label class="label" for="descricao">Descrição</label>
@@ -26,8 +32,8 @@
             </div>
           </div>
         </div>
+      </form>
     </div>
-    </form>
   </div>
 </div>
-</div>
+<script src="/perguntas/novo/script.js" ></script>

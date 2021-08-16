@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="d-flex justify-content-between">
 				<div>
-					<h3 class="mb-4">perguntas cadastradas </h3>
+					<h3 class="mb-4">Perguntas cadastradas </h3>
 				</div>
 				<div>
 					<a href="perguntas/novo" role="button" class="btn btn-success"><i class="fa fa-plus me-1"></i>Adicionar</a>
@@ -15,26 +15,16 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col" style="min-width: 200px;">Título</th>
+							<th scope="col"><span>#</span></th>
+							<th scope="col" style="min-width: 200px;"><span>Descrição</span></th>
+							<th scope="col" style="min-width: 200px;"><span>Usuário</span></th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Jacob</td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>Larry the Bird Larry the Bird</td>
-						</tr>
+					<tbody id="table-body">
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="/perguntas/script.js" ></script>

@@ -6,9 +6,7 @@
 					<h3 class="mb-4">Questionários cadastrados </h3>
 				</div>
 				<div>
-					<a href="questionarios/novo" role="button" class="btn btn-success">
-						<i class="fa fa-plus me-1"></i>Adicionar
-					</a>
+					<a href="questionarios/novo" role="button" class="btn btn-success"><i class="fa fa-plus me-1"></i>Adicionar</a>
 				</div>
 			</div>
 		</div>
@@ -16,35 +14,49 @@
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col" style="min-width: 200px;">Título</th>
-							<th scope="col">Usuário</th>
-							<th scope="col">Data</th>
-						</tr>
+					<tr>
+						<th scope="col"><span>#</span></th>
+						<th scope="col" style="min-width: 200px;"><span>Título</span></th>
+						<th scope="col"><span>Usuário que cadastrou</span></th>
+						<th scope="col"></th>
+					</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-							<td>Otto</td>
-							<td>@mdo</td>
-						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Jacob</td>
-							<td>Thornton</td>
-							<td>@fat</td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td>Larry the Bird Larry the Bird</td>
-							<td>Thornton</td>
-							<td>@twitter</td>
-						</tr>
+					<tbody id="table-body">
+
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="modal-perguntas" tabindex="-1" aria-labelledby="modal-perguntas-title" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable" style="width: 90vw;max-width: initial;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modal-perguntas-title"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body" id="modal-perguntas-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="modal-respostas" tabindex="-1" aria-labelledby="modal-respostas-title" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable" style="width: 90vw;max-width: initial;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modal-respostas-title"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body" id="modal-respostas-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/questionarios/script.js" ></script>

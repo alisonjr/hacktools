@@ -11,6 +11,7 @@
 	<link
 		href="https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif|Lato|Lobster|Open+Sans|Oswald|PT+Sans|Raleway|Source+Sans+Pro|Ubuntu|Roboto"
 		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	<!-- Bootstrap CSS -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +23,78 @@
 </head>
 
 <body>
+	<div class="overlay" id="loading" style="display: none;">
+		<div class="spinner-border text-primary" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<script>
+		const apiRoot = {{API_URI}}
+		const ajax = {
+			get(url, object, onSuccess, onError) {
+				let xhr = new XMLHttpRequest();
 
+				xhr.onreadystatechange = function (evnt) {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						var status = xhr.status;
+						if (status === 0 || (status >= 200 && status < 400)) {
+							onSuccess(evnt);
+						} else {
+							onError(evnt)
+						}
+					}
+				};
+
+				xhr.open("GET", url);
+				xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				xhr.send(object);
+			},
+			post(url, object, onSuccess, onError) {
+				let xhr = new XMLHttpRequest();
+
+				xhr.onreadystatechange = function (evnt) {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						var status = xhr.status;
+						if (status === 0 || (status >= 200 && status < 400)) {
+							onSuccess(evnt);
+						} else {
+							onError(evnt)
+						}
+					}
+				};
+
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				xhr.send(object)
+			}
+		};
+		const loading = {
+			show() {
+				let x = document.getElementById("loading");
+				x.style.display = "flex";
+			},
+			hide() {
+				let x = document.getElementById("loading");
+				x.style.display = "none";
+			}
+		};
+		const toast = {
+			success(message) {
+				Toastify({
+					text: message,
+					duration: 3000,
+					backgroundColor: "#198754",
+				}).showToast();
+			},
+			error(message) {
+				Toastify({
+					text: message,
+					duration: 3000,
+					backgroundColor: "#dc3545"
+				}).showToast();
+			}
+		};
+	</script>
 	<div class="container-fluid">
 		<header class="p-3 mb-3 border-bottom">
 			<div class="container-fluid container-lg">
@@ -39,7 +111,7 @@
 					<ul class="nav nav-pills">
 						<li><a href="/questionarios" class="nav-link px-2 ">Questionários</a></li>
 						<li><a href="/perguntas" class="nav-link px-2 ">Perguntas</a></li>
-						<li><a href="#" class="nav-link px-2 ">Respostas</a></li>
+						<li><a href="/respostas" class="nav-link px-2 ">Respostas</a></li>
 					</ul>
 				</div>
 			</div>
@@ -52,6 +124,33 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.1/toastify.js"
+		integrity="sha512-55m+nq7bzqdQz2vF9AXOYTZtmoikiXcW1XnHNStnk464ewHBwhEeC5z6aqukJ/7n7Y+veO3gPunMydgaX4J8nQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<style type="text/css">
+		.overlay {
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			background-color: rgb(179 179 179 / 60%);
+			border-radius: inherit;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			pointer-events: none;
+			-webkit-transition: .3s cubic-bezier(.25, .8, .5, 1), z-index 1ms;
+			transition: .3s cubic-bezier(.25, .8, .5, 1), z-index 1ms;
+		}
+	</style>
 </body>
 
 </html>

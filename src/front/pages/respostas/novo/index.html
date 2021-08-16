@@ -1,8 +1,17 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="container-wrap w-100 p-md-5 p-4">
-			<h3 class="mb-4">Cadastro de questionário</h3>
+			<h2 class="mb-3">Questionário Agrotools</h2>
+			<div id="mensagens" class="d-flex flex-column mb-5">
+				<small>
+					* Para responder a esse questionário é necessário conceder a permissão para sabermos a sua localização.
+				</small>
+			</div>
 			<form id="form" name="form" class="form" onsubmit="event.preventDefault(); enviar();">
+				<h3 class="mb-4" id="titulo-questionario">Titulo questioário</h3>
+				<input hidden name="lat" id="lat">
+				<input hidden name="long" id="long">
+				<input hidden name="questionario.id" id="questionario.id">
 				<div class="row ">
 					<div class="col-md-5">
 						<div class="form-group">
@@ -10,16 +19,8 @@
 							<input name="usuarioCadastro" class="form-control" id="usuarioCadastro" placeholder="Digite o seu nome"/>
 						</div>
 					</div>
-					<div class="col-md-12 mb-3">
-						<div class="form-group">
-							<label class="label" for="titulo">Título</label>
-							<input type="text" name="titulo" class="form-control" id="titulo"
-							       placeholder="Digite o título do questionário"/>
-						</div>
-					</div>
 					<div class="col-md-12 mb-5">
-						<label class="label">Selecione as perguntas</label>
-						<div class="bg-light px-3 py-1" id="lista-perguntas">	
+						<div class="py-1" id="lista-perguntas">
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -34,5 +35,7 @@
 		</div>
 	</div>
 </div>
+<p id="demo">Clique no botão para receber sua localização em Latitude e Longitude:</p>
+<button onclick="getLocation()">Clique Aqui</button>
 
-<script src="/questionarios/novo/script.js" ></script>
+<script src="/respostas/novo/script.js" ></script>
