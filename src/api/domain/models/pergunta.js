@@ -9,9 +9,9 @@ class Pergunta {
     this.dataCadastro = dataCadastro
   }
 }
-const TABLE_NAME = 'pergunta'
+export const TABLE_NAME = "pergunta"
 
 export default {
   Pergunta,
-  TABLE_NAME
+  TABLE_NAME,
 }

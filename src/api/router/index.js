@@ -1,7 +1,7 @@
 import 'express-group-routes'
 import perguntasController from '../controllers/perguntas'
 
-import questionariosController from '../controllers/questionario'
+import questionariosController from '../controllers/questionarios'
 import respostasController from '../controllers/respostas'
 
 
@@ -21,6 +21,9 @@ const routeManager = function (expressApp, rootUri) {
 
     router.get("/", questionariosController.listar)
     router.post("/", questionariosController.inserir)
+    router.get("/:id", questionariosController.buscarPorId)
+
+    router.get("/:id/respostas", questionariosController.respostasPorQuesitonario)
 
   })
 
