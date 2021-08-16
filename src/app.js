@@ -1,19 +1,23 @@
 import staticServer from "./staticServer"
 import apiServer from "./apiServer"
-import dotenv from 'dotenv'
+import dotenv from "dotenv"
 
-
-// SE ESTIVER RODANDO EM PRODUÇÃO OU OUTRO AMBIENTE 
+// SE ESTIVER RODANDO EM PRODUÇÃO OU OUTRO AMBIENTE
 // AS VARIÁVEIS DE AMBEINTE JÁ ESTARAO CONFIGURADAS
-if (process.env.NODE_ENV?.toLocaleLowerCase() === 'dev') {
-  dotenv.config()
+if (process.env.NODE_ENV?.toLocaleLowerCase() === "dev") {
+	dotenv.config()
 }
 
+let integrationConfig = {
+	API_URI: `http://localhost:${process.env.API_PORT}${process.env.API_URI}`,
+}
 
-staticServer.listen(process.env.PORT).on('listening', () => {
-  console.log(`Site rodando em http://localhost:${process.env.PORT}`)
-})
+staticServer(integrationConfig)
+	.listen(process.env.PORT)
+	.on("listening", () => {
+		console.log(`Site rodando em http://localhost:${process.env.PORT}`)
+	})
 
 apiServer.listen(process.env.API_PORT, process.env.API_URI, () => {
-  console.log(`API rodando em http://localhost:${process.env.API_PORT}`)
+	console.log(`API rodando em ${integrationConfig.API_URI}`)
 })
